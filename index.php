@@ -52,10 +52,25 @@ if ($generated_pwd != '') {
             <h1>PHP PASSWORD GENERATOR</h1>
 
             <!-- Input form -->
-            <form class="input-group flex-nowrap mt-4 d-flex align-items-center">
-                <label for="char-qty" class="px-4">Inserisci la quantità di caratteri</label>
-                <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
-                <button class="btn btn-dark">Invia</button>
+            <form class="mt-4">
+
+                <!-- Password length -->
+                <div class="input-group">
+                    <label for="char-qty" class="px-4">Inserisci la quantità di caratteri</label>
+                    <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
+                </div>
+
+
+                <!-- Checkbox duplicate -->
+                <div class="form-check form-switch d-flex justify-content-between ps-4 mt-4">
+                    <label class="form-check-label" for="repetition">Consenti la ripetizione dello stesso carattere?</label>
+                    <input class="form-check-input" type="checkbox" id="repetition">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-dark mt-4">Invia</button>
+                </div>
             </form>
         </div>
 </body>
