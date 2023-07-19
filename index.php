@@ -1,5 +1,9 @@
 <?php
-
+// Create alphabet variables
+$uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$lowercase = 'abcdefghijklmnopqrstuvwxyz';
+$numbers = '0123456789';
+$symbols = '!@#$%`&*';
 ?>
 
 
@@ -30,7 +34,7 @@
 
             <!-- Input form -->
             <form class="input-group flex-nowrap mt-4 d-flex align-items-center">
-                <label for="char-qty" class="px-4">Inserisci la Quantità di caratteri</label>
+                <label for="char-qty" class="px-4">Inserisci la quantità di caratteri</label>
                 <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
                 <button class="btn btn-dark">Invia</button>
             </form>
