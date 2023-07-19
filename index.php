@@ -64,16 +64,37 @@ if ($generated_pwd != '') {
                 </div>
 
 
+                <!-- CHECKBOX OPTIONS -->
+
                 <!-- Checkbox duplicate -->
                 <div class="form-check form-switch d-flex justify-content-between ps-4 mt-4">
                     <label class="form-check-label" for="repetition">Consenti la ripetizione dello stesso carattere?</label>
                     <input class="form-check-input" type="checkbox" id="repetition" name="repetition">
                 </div>
 
+                <!-- Checkbox uppercase -->
+                <div class="form-check d-flex justify-content-between ps-4 mt-4">
+                    <label class="form-check-label" for="uppercase">Lettere Maiuscole</label>
+                    <input class="form-check-input" type="checkbox" id="uppercase" name="uppercase">
+                </div>
+
+                <!-- Checkbox numbers -->
+                <div class="form-check d-flex justify-content-between ps-4 mt-4">
+                    <label class="form-check-label" for="numbers">Numeri</label>
+                    <input class="form-check-input" type="checkbox" id="numbers" name="numbers">
+                </div>
+
+                <!-- Checkbox symbols -->
+                <div class="form-check d-flex justify-content-between ps-4 mt-4">
+                    <label class="form-check-label" for="symbols">Simboli</label>
+                    <input class="form-check-input" type="checkbox" id="symbols" name="symbols">
+                </div>
+
                 <!-- Submit Button -->
                 <div class="d-flex justify-content-end">
                     <button class="btn btn-dark mt-4">Invia</button>
                 </div>
+
             </form>
         </div>
 </body>
