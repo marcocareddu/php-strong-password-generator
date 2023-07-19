@@ -82,13 +82,11 @@ if ($generated_pwd != '') {
 
                 <!-- Password length -->
                 <div class="input-group">
-                    <label for="char-qty" class="px-4">Inserisci la quantità di caratteri</label>
-                    <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
+                    <label for="char-qty" class="form-label px-4">Lunghezza Password</label>
+                    <input type="range" class="form-range" id="char-qty" value="1" min="1" max="25" name="char-qty">
                 </div>
 
-
                 <!-- CHECKBOX OPTIONS -->
-
                 <!-- Checkbox duplicate -->
                 <div class="form-check form-switch d-flex justify-content-between ps-4 mt-4">
                     <label class="form-check-label" for="repetition">Consenti la ripetizione dello stesso carattere?</label>

@@ -15,8 +15,8 @@ function create_string($array)
 
 // Generate random string from user inputs
 function get_random_characters($number, $string, $repetition)
-{
 
+{
     // Temporary Veriable
     $generated_string = '';
 
