@@ -4,6 +4,9 @@ $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $lowercase = 'abcdefghijklmnopqrstuvwxyz';
 $numbers = '0123456789';
 $symbols = '!@#$%`&*';
+
+// Get character quantity from user input
+$char_qty = $_GET['char-qty'];
 ?>
 
 
