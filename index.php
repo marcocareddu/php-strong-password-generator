@@ -19,7 +19,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css" type="text/css">
-    <title>PHP -PWD Generator</title>
+    <title>PHP - PWD Generator</title>
 </head>
 
 <body>
@@ -28,6 +28,12 @@
 
             <h1>PHP PASSWORD GENERATOR</h1>
 
+            <!-- Input form -->
+            <form class="input-group flex-nowrap mt-4 d-flex align-items-center">
+                <label for="char-qty" class="px-4">Inserisci la Quantità di caratteri</label>
+                <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
+                <button class="btn btn-dark">Invia</button>
+            </form>
 
         </div>
 </body>
