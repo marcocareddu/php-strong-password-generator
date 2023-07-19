@@ -7,13 +7,21 @@ $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $lowercase = 'abcdefghijklmnopqrstuvwxyz';
 $numbers = '0123456789';
 $symbols = '!@#$%`&*';
+session_start();
 
 // Get character quantity from user input
-$char_qty = $_GET['char-qty'] ?? 0;
+$char_qty = $_GET['char-qty'] ?? '';
 
-
-
+// Create pwd
 $generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols);
+
+// Export $generated_pwd
+$_SESSION['pwd'] = $generated_pwd;
+
+// Redirect
+if ($generated_pwd != '') {
+    header('Location: ./pwd.php');
+}
 
 ?>
 
@@ -49,11 +57,6 @@ $generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbe
                 <input type="number" class="form-control" id="char-qty" name="char-qty" placeholder="Quanti caratteri?" min="0">
                 <button class="btn btn-dark">Invia</button>
             </form>
-
-            <div>
-                <h3>La tua password è: </h3>
-                <h4><?= $generated_pwd ?></h4>
-            </div>
         </div>
 </body>
 
