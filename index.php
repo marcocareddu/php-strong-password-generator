@@ -6,13 +6,36 @@ $numbers = '0123456789';
 $symbols = '!@#$%`&*';
 
 // Get character quantity from user input
-$char_qty = $_GET['char-qty'];
+$char_qty = $_GET['char-qty'] ?? 0;
+
+// Generate random string from user inputs
+function get_random_characters($number, $string1, $string2, $string3, $string4)
+{
+    // Create unique string
+    $megastring = $string1 . $string2 . $string3 . $string4;
+
+    // Temporary Veriable
+    $generated_string = '';
+
+    // Create $number random number
+    for ($i = 0; $i <= $number; $i++) {
+        $random_number = rand(0, strlen($megastring));
+
+        // Add character into variable
+        $generated_string .= $megastring[$random_number];
+    }
+
+    return $generated_string;
+};
+
+$generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols);
+
 ?>
 
 
 <!-- HTML -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -42,6 +65,10 @@ $char_qty = $_GET['char-qty'];
                 <button class="btn btn-dark">Invia</button>
             </form>
 
+            <div>
+                <h3>La tua password è: </h3>
+                <h4><?= $generated_pwd ?></h4>
+            </div>
         </div>
 </body>
 
