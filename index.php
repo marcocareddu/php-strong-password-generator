@@ -1,12 +1,32 @@
 <?php
 // Import functions from file
 include __DIR__ . '/includes/functions.php';
+include __DIR__ . '/includes/data/characters.php';
 
-// Create alphabet variables
-$uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$lowercase = 'abcdefghijklmnopqrstuvwxyz';
-$numbers = '0123456789';
-$symbols = '!@#$%`&*';
+// Get options values
+$uppercase_option = $_GET['uppercase'] ?? false;
+$numbers_option = $_GET['numbers'] ?? false;
+$symbols_option = $_GET['symbols'] ?? false;
+
+// Array from data
+$all = [
+    [
+        'name' => $lowercase,
+        'ready' => true
+    ],
+    [
+        'name' => $uppercase,
+        'ready' => $uppercase_option
+    ],
+    [
+        'name' => $numbers,
+        'ready' => $numbers_option
+    ],
+    [
+        'name' => $symbols,
+        'ready' => $symbols_option
+    ],
+];
 
 // Get character quantity from user input
 $char_qty = $_GET['char-qty'] ?? '';
@@ -14,13 +34,11 @@ $char_qty = $_GET['char-qty'] ?? '';
 // Get character repetition option from user
 $character_repetition = $_GET['repetition'] ?? false;
 
-// Get options values
-$uppercase_option = $_GET['uppercase'] ?? false;
-$numbers_option = $_GET['numbers'] ?? false;
-$symbols_option = $_GET['symbols'] ?? false;
+// Create megastring
+$megastring = create_string($all);
 
 // Create pwd
-$generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols, $character_repetition);
+$generated_pwd = get_random_characters($char_qty, $megastring, $character_repetition);
 
 // Export $generated_pwd
 session_start();
