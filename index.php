@@ -14,6 +14,11 @@ $char_qty = $_GET['char-qty'] ?? '';
 // Get character repetition option from user
 $character_repetition = $_GET['repetition'] ?? false;
 
+// Get options values
+$uppercase_option = $_GET['uppercase'] ?? false;
+$numbers_option = $_GET['numbers'] ?? false;
+$symbols_option = $_GET['symbols'] ?? false;
+
 // Create pwd
 $generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols, $character_repetition);
 
