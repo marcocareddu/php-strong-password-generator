@@ -7,15 +7,18 @@ $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 $lowercase = 'abcdefghijklmnopqrstuvwxyz';
 $numbers = '0123456789';
 $symbols = '!@#$%`&*';
-session_start();
 
 // Get character quantity from user input
 $char_qty = $_GET['char-qty'] ?? '';
 
+// Get character repetition option from user
+$character_repetition = $_GET['repetition'] ?? false;
+
 // Create pwd
-$generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols);
+$generated_pwd = get_random_characters($char_qty, $uppercase, $lowercase, $numbers, $symbols, $character_repetition);
 
 // Export $generated_pwd
+session_start();
 $_SESSION['pwd'] = $generated_pwd;
 
 // Redirect
@@ -64,7 +67,7 @@ if ($generated_pwd != '') {
                 <!-- Checkbox duplicate -->
                 <div class="form-check form-switch d-flex justify-content-between ps-4 mt-4">
                     <label class="form-check-label" for="repetition">Consenti la ripetizione dello stesso carattere?</label>
-                    <input class="form-check-input" type="checkbox" id="repetition">
+                    <input class="form-check-input" type="checkbox" id="repetition" name="repetition">
                 </div>
 
                 <!-- Submit Button -->
