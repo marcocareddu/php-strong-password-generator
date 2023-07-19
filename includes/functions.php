@@ -1,5 +1,6 @@
 <?php
 
+// Crate string from array
 function create_string($array)
 {
     $megastring = '';
@@ -11,7 +12,6 @@ function create_string($array)
     }
     return $megastring;
 };
-
 
 // Generate random string from user inputs
 function get_random_characters($number, $string, $repetition)
